@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact App</title>
+    <link rel="stylesheet" href="App.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="contact-app">
+            <div class="header">
+                <h1>Contact App</h1>
+                <button id="addContactBtn" class="add-btn">+</button>
+            </div>
+
+            <div class="main-content">
+                <div class="contact-list-panel">
+                    <div class="search-bar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-search">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Search">
+                    </div>
+                    <div id="contactList" class="contact-list">
+                    </div>
+                </div>
+
+                <div class="contact-details-panel">
+                    <div id="contactDetails" class="contact-details">
+                        <p class="placeholder">Select a contact to view details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Add New Contact</h2>
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First name</label>
+                        <input type="text" id="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last name</label>
+                        <input type="text" id="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactPhone">Phone</label>
+                        <input type="text" id="contactPhone">
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-pic">Profile Image</label>
+                        <div class="imgDiv">
+                            <input type="file" id="contactImage" accept="image/*">
+                        </div>
+                    </div>
+                </div>
+
+                <label for="contactEmail">Email</label>
+                <input type="email" id="contactEmail">
+                <span class="error-message" id="emailError"></span>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactAddress1">Address 1</label>
+                        <input type="text" id="contactAddress1" placeholder="Street">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactAddress2">Address 2</label>
+                        <input type="text" id="contactAddress2" placeholder="Street">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactCountry"></label>
+                        <input type="text" id="contactCountry" placeholder="Country">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactState"></label>
+                        <input type="text" id="contactState" placeholder="State">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="cancelContactBtn" class="cancel-btn">Cancel</button>
+                    <button type="submit" id="saveContactBtn">Save</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

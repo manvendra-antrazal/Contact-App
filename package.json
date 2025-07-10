@@ -1,0 +1,23 @@
+{
+  "name": "contact-app-project",
+  "version": "1.0.0",
+  "main": "Contact_App.js",
+  "type": "module",
+  "scripts": {
+    "start": "Contact_App.js",
+    "dev": "nodemon Contact_App.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.0.1",
+    "multer": "^2.0.1",
+    "mysql2": "^3.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

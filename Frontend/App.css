@@ -1,0 +1,383 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+}
+
+.contact-app {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px 0 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.add-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+    background-color: #0056b3;
+}
+
+.main-content {
+    display: flex;
+    flex-grow: 1;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.contact-list-panel {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #eee;
+    border-radius: 0.5rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    border-radius: 0.5rem;
+    padding: 8px 0;
+}
+
+.search-bar svg {
+    color: #888;
+    margin-right: 10px;
+    margin-left: 11px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    flex-grow: 1;
+}
+
+.contact-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-item:hover {
+    background-color: #f0f0f0;
+}
+
+.contact-item.active {
+    background-color: #e6f2ff;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+}
+
+.contact-item span {
+    font-size: 17px;
+    color: #333;
+    flex-grow: 1;
+    font-weight: 600;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.contact-actions button:hover {
+    background-color: #e9ecef;
+}
+
+.contact-actions svg {
+    width: 20px;
+    height: 20px;
+    fill: #6c757d;
+    display: block;
+}
+
+.contact-actions button.delete-btn svg path {
+    fill: #6c757d;
+}
+
+.contact-actions button.edit-btn svg path {
+    fill: #6c757d;
+}
+
+
+.contact-details-panel {
+    flex-grow: 1;
+    border-radius: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #eee;
+}
+
+.contact-details {
+    padding: 1rem;
+    text-align: center;
+    display: none;
+}
+
+.contact-details .placeholder {
+    color: #888;
+    font-style: italic;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.contact-details.active {
+    display: block;
+}
+
+.contact-details .profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.9rem;
+    border: 3px solid #eee;
+}
+
+.contact-details h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.contact-details p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.contact-details p.email,
+.contact-details p.phone {
+    font-weight: bold;
+}
+
+.contact-details .address-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.contact-details .address-line input[type="text"] {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 15px;
+    width: calc(100% - 30px);
+}
+
+.contact-details .address-line .edit-address-icon {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    fill: #6c757d;
+    transition: fill 0.2s ease;
+}
+
+.contact-details .address-line .edit-address-icon:hover {
+    fill: #0056b3;
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    padding-top: 50px;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer; 
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.modal-content h2 {
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 28px;
+}
+
+.modal-content form label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: normal;
+    color: #555;
+    font-size: 14px;
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.imgDiv{
+    border: 1px solid #ddd;
+    height: 53%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#contactImage{
+    width: 92%;
+    margin: 9px;
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 0px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input {
+    margin-bottom: 15px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.modal-content form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: auto;
+    margin-top: 0;
+    transition: background-color 0.2s ease;
+}
+
+.modal-content form button:hover {
+    background-color: #0056b3;
+}
+
+.cancel-btn {
+    background-color: #fff !important;
+    color: #007bff !important;
+    border: 1px solid #007bff !important;
+}
+
+.cancel-btn:hover {
+    background-color: #e6f2ff !important;
+}
+
+
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
