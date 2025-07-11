@@ -1,0 +1,82 @@
+.contact-details-panel {
+    flex-grow: 1;
+    border-radius: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #eee;
+}
+
+.contact-details {
+    padding: 1rem;
+    text-align: center;
+    display: none;
+}
+
+.contact-details .placeholder {
+    color: #888;
+    font-style: italic;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.contact-details.active {
+    display: block;
+}
+
+.contact-details .profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.9rem;
+    border: 3px solid #eee;
+}
+
+.contact-details h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.contact-details p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.contact-details p.email,
+.contact-details p.phone {
+    font-weight: bold;
+}
+
+.contact-details .address-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.contact-details .address-line input[type="text"] {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 15px;
+    width: calc(100% - 30px);
+}
+
+.contact-details .address-line .edit-address-icon {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    fill: #6c757d;
+    transition: fill 0.2s ease;
+}
+
+.contact-details .address-line .edit-address-icon:hover {
+    fill: #0056b3;
+}

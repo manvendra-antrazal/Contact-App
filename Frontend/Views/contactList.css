@@ -1,0 +1,93 @@
+.contact-list-panel {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #eee;
+    border-radius: 0.5rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    border-radius: 0.5rem;
+    padding: 8px 0;
+}
+
+.search-bar svg {
+    color: #888;
+    margin-right: 10px;
+    margin-left: 11px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    flex-grow: 1;
+}
+
+.contact-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-item:hover {
+    background-color: #f0f0f0;
+}
+
+.contact-item.active {
+    background-color: #e6f2ff;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+}
+
+.contact-item span {
+    font-size: 17px;
+    color: #333;
+    flex-grow: 1;
+    font-weight: 600;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.contact-actions button:hover {
+    background-color: #e9ecef;
+}
+
+.contact-actions svg {
+    width: 20px;
+    height: 20px;
+    fill: #6c757d;
+    display: block;
+}
+
+.contact-actions button.delete-btn svg path {
+    fill: #6c757d;
+}
+
+.contact-actions button.edit-btn svg path {
+    fill: #6c757d;
+}
